@@ -1,6 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './assets/images/logo.svg';
+import './assets/css/App.css';
+
+// iportar componentes
+import MiComponente from './components/MiComponente';
 
 function HolaMundo(nombre) {
  let presentacion = (
@@ -29,6 +32,9 @@ function App() {
         >
           Learn React
         </a>
+        <section>
+          <MiComponente/>
+        </section>
       </header>
     </div>
   );
