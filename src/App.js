@@ -4,6 +4,7 @@ import './assets/css/App.css';
 
 // iportar componentes
 import MiComponente from './components/MiComponente';
+import Peliculas from './components/Peliculas';
 
 function HolaMundo(nombre) {
  let presentacion = (
@@ -33,7 +34,8 @@ function App() {
           Learn React
         </a>
         <section>
-          <MiComponente></MiComponente>
+          <MiComponente/>
+          <Peliculas></Peliculas>
         </section>
       </header>
     </div>

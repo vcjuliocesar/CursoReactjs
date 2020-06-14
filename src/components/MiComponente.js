@@ -10,8 +10,8 @@ class MiComponente extends Component{
         };
         return (
             <div className="mi-componente">
-                <h1>{'Reseta' + receta.nombre}</h1>
-                <h2>{'Calorias' + receta.calorias}</h2>
+                <h1>{'Reseta ' + receta.nombre}</h1>
+                <h2>{'Calorias ' + receta.calorias}</h2>
                 <ol>
                     {
                         receta.ingredientes.map((ingrediente,i) => {
