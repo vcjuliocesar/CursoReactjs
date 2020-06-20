@@ -9,14 +9,17 @@ import Footer from "./components/Footer";
 import SeccionPruebas from "./components/SeccionPruebas";
 
 function App() {
-  
+  let strButton = " Ir al blog";
   return (
     <div className="App">
-      <Header></Header>
-      <Slider></Slider>
+      <Header/>
+      <Slider 
+      title="Bienvenido al Curso de React"
+      btn={strButton}
+      />
       <div className="center">
-        <SeccionPruebas></SeccionPruebas>
-        <Sidebar></Sidebar>
+        <SeccionPruebas/>
+        <Sidebar/>
       </div>{/* end div center */}
       <div className="clearfix"></div>
       <Footer></Footer>
