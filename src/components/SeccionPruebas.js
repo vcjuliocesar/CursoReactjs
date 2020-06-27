@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import logo from "../assets/images/logo.svg";
 import MiComponente from "./MiComponente";
-import Peliculas from "./Peliculas";
 
 class SeccionPruebas extends Component {
   contador = 0;
@@ -50,7 +49,6 @@ class SeccionPruebas extends Component {
         </a>
         <section className="componentes">
           <MiComponente />
-          <Peliculas></Peliculas>
           <h2 className="subheader">Estado</h2>
           <p>
             Contado: {this.state.contador}

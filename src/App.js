@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Slider from "./components/Slider";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
-import SeccionPruebas from "./components/SeccionPruebas";
+import Peliculas from './components/Peliculas';
 
 function App() {
   let strButton = " Ir al blog";
@@ -18,7 +18,7 @@ function App() {
       btn={strButton}
       />
       <div className="center">
-        <SeccionPruebas/>
+        <Peliculas></Peliculas>
         <Sidebar/>
       </div>{/* end div center */}
       <div className="clearfix"></div>
