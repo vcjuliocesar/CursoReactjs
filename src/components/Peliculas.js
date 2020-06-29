@@ -8,7 +8,8 @@ class Peliculas extends Component{
             {titulo:'Battle of gods', image:'https://i.pinimg.com/originals/70/51/79/7051796a08f51b44928efc2ec5e442d0.jpg'},
             {titulo:'Fukkatsu no F', image:'https://razisensei.com/blogprueba/wp-content/uploads/2015/04/dragon-ball-razi-1024x576.jpg'},
         ],
-        nombre : 'Julio Cesar'
+        nombre : 'Julio Cesar',
+        favorita:{}
     }
 
     cambiarNombre = () => {
@@ -21,12 +22,32 @@ class Peliculas extends Component{
         });
     }
 
+    favorita = (pelicula) => {
+        console.log("Favorita marcada");
+        console.log(pelicula);
+        this.setState({
+            favorita:pelicula
+        });
+    }
+
     render(){
+        let pStyles = {
+            background:'green',
+            color:'white',
+            padding:'10px'
+        }
         return (
             <div id='content' className="peliculas">
                 <h2>peliculas</h2>
                 <p>Seccion de peliculas favoritas de {this.state.nombre}</p>
                 <p><button onClick={this.cambiarNombre}>Cambiar nombre</button></p>
+                {this.state.favorita.titulo &&
+                    <p className="favorita" style={pStyles}>
+                        <strong>La pelicula favorita es: </strong>
+                        <span>{this.state.favorita.titulo}</span>
+                    </p>
+                }
+                
                 {/** Crear un componente peliculas */}
                 <div id="articles" className="peliculas">
                 {
@@ -35,6 +56,7 @@ class Peliculas extends Component{
                          <Pelicula 
                             key = {i} 
                             pelicula = {pelicula}
+                            marcarFavorita = {this.favorita}
                             />
                         )
                     })
