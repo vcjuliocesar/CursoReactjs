@@ -2,15 +2,7 @@ import React,{Component} from 'react';
 import Pelicula from './Pelicula';
 
 class Peliculas extends Component{
-    state = {
-        peliculas:[
-            {titulo:'Broly', image:'https://vignette.wikia.nocookie.net/dragonball/images/f/f9/Dragon_Ball_Super_Broly_p%C3%B3ster_ES.png/revision/latest?cb=20181126164119&path-prefix=es'},
-            {titulo:'Battle of gods', image:'https://i.pinimg.com/originals/70/51/79/7051796a08f51b44928efc2ec5e442d0.jpg'},
-            {titulo:'Fukkatsu no F', image:'https://razisensei.com/blogprueba/wp-content/uploads/2015/04/dragon-ball-razi-1024x576.jpg'},
-        ],
-        nombre : 'Julio Cesar',
-        favorita:{}
-    }
+    state = {};
 
     cambiarNombre = () => {
         var {peliculas} = this.state;
@@ -29,6 +21,26 @@ class Peliculas extends Component{
             favorita:pelicula
         });
     }
+    //cuando se carga un componente
+    /*componentDidMount(){
+        alert("Cuando se carga un componente");
+    }*/
+    //antes de cargar la pantalla se ejecuta esto
+    componentWillMount(){
+        this.setState({
+            peliculas:[
+                {titulo:'Broly', image:'https://vignette.wikia.nocookie.net/dragonball/images/f/f9/Dragon_Ball_Super_Broly_p%C3%B3ster_ES.png/revision/latest?cb=20181126164119&path-prefix=es'},
+                {titulo:'Battle of gods', image:'https://i.pinimg.com/originals/70/51/79/7051796a08f51b44928efc2ec5e442d0.jpg'},
+                {titulo:'Fukkatsu no F', image:'https://razisensei.com/blogprueba/wp-content/uploads/2015/04/dragon-ball-razi-1024x576.jpg'},
+            ],
+            nombre : 'Julio Cesar',
+            favorita:{}
+        });
+    }
+    //cuando ya se a montado el componente
+    /*componentDidMount(){
+        alert("se a montado el componente");
+    }*/
 
     render(){
         let pStyles = {
