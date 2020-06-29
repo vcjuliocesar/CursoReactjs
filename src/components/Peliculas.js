@@ -10,17 +10,32 @@ class Peliculas extends Component{
         ],
         nombre : 'Julio Cesar'
     }
+
+    cambiarNombre = () => {
+        var {peliculas} = this.state;
+        var random = Math.floor(Math.random() * 3)
+        peliculas[random].titulo = "ejemplo";
+        
+        this.setState({
+            peliculas
+        });
+    }
+
     render(){
         return (
             <div id='content' className="peliculas">
                 <h2>peliculas</h2>
                 <p>Seccion de peliculas favoritas de {this.state.nombre}</p>
+                <p><button onClick={this.cambiarNombre}>Cambiar nombre</button></p>
                 {/** Crear un componente peliculas */}
                 <div id="articles" className="peliculas">
                 {
                     this.state.peliculas.map((pelicula,i) =>{
                         return (
-                         <Pelicula key = {i} pelicula = {pelicula}/>
+                         <Pelicula 
+                            key = {i} 
+                            pelicula = {pelicula}
+                            />
                         )
                     })
                 }

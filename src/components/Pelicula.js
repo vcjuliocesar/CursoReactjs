@@ -5,7 +5,7 @@ class Pelicula extends Component {
     const { titulo, image } = this.props.pelicula;
     return (
       <article className="article-item" id="article-template">
-        <div class="image-wrap">
+        <div className="image-wrap">
           <img src={image} alt={titulo} />
         </div>
 
@@ -13,7 +13,7 @@ class Pelicula extends Component {
         <span className="date">Hace 5 minutos</span>
         <a href="#">Leer más</a>
 
-        <div class="clearfix"></div>
+        <div className="clearfix"></div>
       </article>
     );
   }
