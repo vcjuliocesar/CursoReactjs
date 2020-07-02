@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Slider from "./components/Slider";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
-import Peliculas from './components/Peliculas';
+import Router from "./Router";
 
 function App() {
   let strButton = " Ir al blog";
@@ -18,7 +18,7 @@ function App() {
       btn={strButton}
       />
       <div className="center">
-        <Peliculas></Peliculas>
+        <Router/>
         <Sidebar/>
       </div>{/* end div center */}
       <div className="clearfix"></div>
