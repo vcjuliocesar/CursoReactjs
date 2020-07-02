@@ -16,6 +16,8 @@ class MiComponente extends Component {
             return <li key={i}>{ingrediente}</li>;
           })}
         </ol>
+        <hr />
+        {this.props.saludo && <h3>{this.props.saludo}</h3>}
       </div>
     );
   }
