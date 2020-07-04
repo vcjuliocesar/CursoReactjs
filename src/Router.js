@@ -24,6 +24,29 @@ class Router extends Component {
               </React.Fragment>
             )}
           />
+          <Route
+            exact
+            path="/rutapruebas/:nombre/:apellidos?"
+            render={(props) => {
+              let nombre = props.match.params.nombre;
+              let apellidos = props.match.params.apellidos;
+              return (
+                <div id="content">
+                  <h1 className="subheader">Pagina de pruebas</h1>
+                  <h2>
+                    {nombre && !apellidos && (
+                      <React.Fragment>{nombre}</React.Fragment>
+                    )}
+                    {nombre && apellidos && (
+                      <React.Fragment>
+                        {nombre} {apellidos}
+                      </React.Fragment>
+                    )}
+                  </h2>
+                </div>
+              );
+            }}
+          />
           <Route component={Error} />
         </Switch>
       </BrowserRouter>
