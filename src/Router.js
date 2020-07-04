@@ -19,46 +19,47 @@ class Router extends Component {
         <Header />
         <Slider title="Bienvenido al Curso de React" btn={strButton} />
         <div className="center">
-        <Switch>
-          <Route exact path="/" component={Peliculas} />
-          <Route exact path="/ruta-prueba" component={SeccionPruebas} />
-          <Route exact path="/segunda-ruta" component={MiComponente} />
-          <Route
-            exact
-            path="/pagina-1"
-            render={() => (
-              <React.Fragment>
-                <h1>Hola desde la pagina-1</h1>
-                <MiComponente saludo="Hola amigo" />
-              </React.Fragment>
-            )}
-          />
-          <Route
-            exact
-            path="/rutapruebas/:nombre/:apellidos?"
-            render={(props) => {
-              let nombre = props.match.params.nombre;
-              let apellidos = props.match.params.apellidos;
-              return (
-                <div id="content">
-                  <h1 className="subheader">Pagina de pruebas</h1>
-                  <h2>
-                    {nombre && !apellidos && (
-                      <React.Fragment>{nombre}</React.Fragment>
-                    )}
-                    {nombre && apellidos && (
-                      <React.Fragment>
-                        {nombre} {apellidos}
-                      </React.Fragment>
-                    )}
-                  </h2>
-                </div>
-              );
-            }}
-          />
-          <Route component={Error} />
-        </Switch>
-        <Sidebar/>
+          <Switch>
+            <Route exact path="/" component={Peliculas} />
+            <Route exact path="/home" component={Peliculas} />
+            <Route exact path="/ruta-prueba" component={SeccionPruebas} />
+            <Route exact path="/segunda-ruta" component={MiComponente} />
+            <Route
+              exact
+              path="/pagina-1"
+              render={() => (
+                <React.Fragment>
+                  <h1>Hola desde la pagina-1</h1>
+                  <MiComponente saludo="Hola amigo" />
+                </React.Fragment>
+              )}
+            />
+            <Route
+              exact
+              path="/rutapruebas/:nombre/:apellidos?"
+              render={(props) => {
+                let nombre = props.match.params.nombre;
+                let apellidos = props.match.params.apellidos;
+                return (
+                  <div id="content">
+                    <h1 className="subheader">Pagina de pruebas</h1>
+                    <h2>
+                      {nombre && !apellidos && (
+                        <React.Fragment>{nombre}</React.Fragment>
+                      )}
+                      {nombre && apellidos && (
+                        <React.Fragment>
+                          {nombre} {apellidos}
+                        </React.Fragment>
+                      )}
+                    </h2>
+                  </div>
+                );
+              }}
+            />
+            <Route component={Error} />
+          </Switch>
+          <Sidebar />
         </div>
         <div className="clearfix"></div>
         <Footer />
