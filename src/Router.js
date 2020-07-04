@@ -5,11 +5,20 @@ import SeccionPruebas from "./components/SeccionPruebas";
 import MiComponente from "./components/MiComponente";
 import Error from "./components/Error";
 
+import Header from "./components/Header";
+import Slider from "./components/Slider";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
+
 class Router extends Component {
   render() {
+    let strButton = " Ir al blog";
     return (
       <BrowserRouter>
         {/** Configurar rutas y paginas */}
+        <Header />
+        <Slider title="Bienvenido al Curso de React" btn={strButton} />
+        <div className="center">
         <Switch>
           <Route exact path="/" component={Peliculas} />
           <Route exact path="/ruta-prueba" component={SeccionPruebas} />
@@ -49,6 +58,10 @@ class Router extends Component {
           />
           <Route component={Error} />
         </Switch>
+        <Sidebar/>
+        </div>
+        <div className="clearfix"></div>
+        <Footer />
       </BrowserRouter>
     );
   }
