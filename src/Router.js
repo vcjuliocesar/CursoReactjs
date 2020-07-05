@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Blog from "./components/Blog";
+import Formulario from "./components/Formulario";
 
 class Router extends Component {
   render() {
@@ -21,6 +22,9 @@ class Router extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/blog" component={Blog} />
+            <Route exact path="/formulario" component={Formulario} />
+
+            <Route exact path="/peliculas" component={Peliculas} />
             <Route exact path="/segunda-ruta" component={MiComponente} />
             <Route
               exact

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Pelicula from "./Pelicula";
+import Slider from "./Slider";
+import Sidebar from "./Sidebar";
 
 class Peliculas extends Component {
   state = {};
@@ -62,51 +64,55 @@ class Peliculas extends Component {
     };
 
     let favorita;
-    if(this.state.favorita.titulo){
-        favorita = (
+    if (this.state.favorita.titulo) {
+      favorita = (
         <p className="favorita" style={pStyles}>
-            <strong>La pelicula favorita es: </strong>
-            <span>{this.state.favorita.titulo}</span>
-          </p>
-          );
-    }else{
-        favorita = (<p>No hay pelicula favorita</p>);
+          <strong>La pelicula favorita es: </strong>
+          <span>{this.state.favorita.titulo}</span>
+        </p>
+      );
+    } else {
+      favorita = <p>No hay pelicula favorita</p>;
     }
 
     return (
-      <div id="content" className="peliculas">
-        <h2>peliculas</h2>
-        <p>Seccion de peliculas favoritas de {this.state.nombre}</p>
-        <p>
-          <button onClick={this.cambiarNombre}>Cambiar nombre</button>
-        </p>
-        {/** esta es una forma de hacer condicionales */}
-        {
-        /*this.state.favorita.titulo ? (
+      <React.Fragment>
+        <Slider title="Formulario" size="slider-small"/>
+        <div className="center">
+          <div id="content" className="peliculas">
+            <h2>peliculas</h2>
+            <p>Seccion de peliculas favoritas de {this.state.nombre}</p>
+            <p>
+              <button onClick={this.cambiarNombre}>Cambiar nombre</button>
+            </p>
+            {/** esta es una forma de hacer condicionales */}
+            {/*this.state.favorita.titulo ? (
           <p className="favorita" style={pStyles}>
             <strong>La pelicula favorita es: </strong>
             <span>{this.state.favorita.titulo}</span>
           </p>
         ) : (
           <p>No hay pelicula favorita</p>
-        )*/
-        }
-        {/**esta es otra forma de hacer condicionales */}
-        {favorita}
+        )*/}
+            {/**esta es otra forma de hacer condicionales */}
+            {favorita}
 
-        {/** Crear un componente peliculas */}
-        <div id="articles" className="peliculas">
-          {this.state.peliculas.map((pelicula, i) => {
-            return (
-              <Pelicula
-                key={i}
-                pelicula={pelicula}
-                marcarFavorita={this.favorita}
-              />
-            );
-          })}
+            {/** Crear un componente peliculas */}
+            <div id="articles" className="peliculas">
+              {this.state.peliculas.map((pelicula, i) => {
+                return (
+                  <Pelicula
+                    key={i}
+                    pelicula={pelicula}
+                    marcarFavorita={this.favorita}
+                  />
+                );
+              })}
+            </div>
+          </div>
+          <Sidebar blog="true"/>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
