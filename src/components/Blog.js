@@ -2,20 +2,20 @@ import React, { Component } from "react";
 import Slider from "./Slider";
 import Sidebar from "./Sidebar";
 
-class Home extends Component {
+class Blog extends Component {
   render() {
     return (
-      <div id="home">
-        <Slider title="Bienvenido al Curso de React" btn="Ir al blog" size="slider-big"/>
+      <div id="blog">
+        <Slider title="Blog" size="slider-small"/>
         <div className="center">
           <div id="content">
-            <h1 className="subheader">Ultimos articulos</h1>
+            
           </div>
-          <Sidebar />
+          <Sidebar blog="true"/>
         </div>
       </div>
     );
   }
 }
 
-export default Home;
+export default Blog;
