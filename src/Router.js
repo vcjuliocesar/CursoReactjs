@@ -6,9 +6,8 @@ import MiComponente from "./components/MiComponente";
 import Error from "./components/Error";
 
 import Header from "./components/Header";
-import Slider from "./components/Slider";
-import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import Home from "./components/Home";
 
 class Router extends Component {
   render() {
@@ -17,11 +16,9 @@ class Router extends Component {
       <BrowserRouter>
         {/** Configurar rutas y paginas */}
         <Header />
-        <Slider title="Bienvenido al Curso de React" btn={strButton} />
-        <div className="center">
           <Switch>
-            <Route exact path="/" component={Peliculas} />
-            <Route exact path="/home" component={Peliculas} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
             <Route exact path="/ruta-prueba" component={SeccionPruebas} />
             <Route exact path="/segunda-ruta" component={MiComponente} />
             <Route
@@ -59,8 +56,6 @@ class Router extends Component {
             />
             <Route component={Error} />
           </Switch>
-          <Sidebar />
-        </div>
         <div className="clearfix"></div>
         <Footer />
       </BrowserRouter>
