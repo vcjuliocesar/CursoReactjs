@@ -81,21 +81,21 @@ class Formulario extends Component {
                   name="genero"
                   value="hombre"
                   ref={this.generoHombreRef}
-                />{" "}
+                />
                 Hombre
                 <input
                   type="radio"
                   name="genero"
                   value="mujer"
                   ref={this.generoMujerRef}
-                />{" "}
+                />
                 Mujer
                 <input
                   type="radio"
                   name="genero"
                   value="otro"
                   ref={this.generoOtroRef}
-                />{" "}
+                />
                 Otro
               </div>
 
